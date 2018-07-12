@@ -172,3 +172,8 @@ body, .app {
   text-align: center;
   font-size: 0.8em;
 }
+
+.books-details {
+  width: 800px;
+  margin-left: 60px;
+}

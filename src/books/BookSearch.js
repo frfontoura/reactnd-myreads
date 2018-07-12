@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+
 import * as BooksAPI from '../BooksAPI'
 import BookList from './BookList'
+import TopBar from '../common/TopBar'
 
 class BookSearch extends Component {
 
@@ -41,7 +43,7 @@ class BookSearch extends Component {
 
                     resp.forEach(b1 => {
                         this.state.booksOnShelf.forEach(b2 => {
-                            if(b1.id === b2.id) {
+                            if (b1.id === b2.id) {
                                 b1.shelf = b2.shelf
                             }
                         })
@@ -67,8 +69,7 @@ class BookSearch extends Component {
     render() {
         return (
             <div className="search-books">
-                <div className="search-books-bar">
-                    <Link className='close-search' to='/'>Close</Link>
+                <TopBar>
                     <div className="search-books-input-wrapper">
                         <input type="text"
                             value={this.state.query}
@@ -76,7 +77,8 @@ class BookSearch extends Component {
                             placeholder="Search by title or author"
                             autoFocus={true} />
                     </div>
-                </div>
+                </TopBar>
+
                 <div className="search-books-results">
                     <BookList books={this.state.books} onChangeShelf={this.changeShelf} />
                 </div>
