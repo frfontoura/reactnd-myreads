@@ -1,23 +1,15 @@
 import React, { Component } from 'react'
 import LinkButton from '../common/LinkButton'
+import If from '../common/If'
+
 
 class Book extends Component {
-
-    renderButton() {
-        if (this.props.showDetails) {
-            return false
-        } else {
-            return (
-                <LinkButton description='Detail' linkTo={`/detail/${this.props.book.id}`} buttonStyle='outline-primary btn-block' />
-            )
-        }
-    }
 
     render() {
         const { book, onChangeShelf } = this.props
         const authors = book.authors || []
         const shelf = book.shelf || 'none'
-        const thumbnail = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : ''
+        const thumbnail = (book.imageLinks && book.imageLinks.thumbnail) ? book.imageLinks.thumbnail : ''
 
         return (
             <div className="book">
@@ -36,7 +28,9 @@ class Book extends Component {
                 <div className="book-title">{book.title}</div>
                 <div className="book-authors" style={{ marginBottom: 10 }}>{authors.join(', ')}</div>
 
-                {this.renderButton()}
+                <If test={!this.props.showDetails}>
+                    <LinkButton description='Detail' linkTo={`/detail/${book.id}`} buttonStyle='outline-primary btn-block' />
+                </If>
             </div>
         )
     }
