@@ -24,16 +24,16 @@ class BookSearch extends Component {
     }
 
     onChange(value) {
-        this.setState({ query: value.trim() })
+        this.setState({ query: value })
 
-        clearTimeout(this.timeout);
+        clearTimeout(this.timeout)
         this.timeout = setTimeout(() => {
             if (value.trim()) {
                 this.search()
             } else {
                 this.setState({ books: [] })
             }
-        }, 600);
+        }, 600)
     }
 
     search() {

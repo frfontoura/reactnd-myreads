@@ -1,7 +1,3 @@
-export default props => {
-    if(props.test){
-        return props.children
-    } else {
-        return false
-    }
-}
+const If = ({ test, children }) => (test ? children : false);
+
+export default If;

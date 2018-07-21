@@ -25,7 +25,6 @@ class BookShelf extends Component {
                 wantToRead: resp.filter(r => r.shelf === 'wantToRead'),
                 read: resp.filter(r => r.shelf === 'read')
             })
-
         })
     }
 
@@ -36,7 +35,6 @@ class BookShelf extends Component {
 
         BooksAPI.update(book, shelf).then((books) => {
             book.shelf = shelf
-
             this.setState({
                 [currentShelf]: this.state[currentShelf].filter(b => b.id !== book.id),
                 [shelf]: [ ...this.state[shelf], book ]

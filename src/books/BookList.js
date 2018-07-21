@@ -4,14 +4,14 @@ import sortBy from 'sort-by'
 
 class BookList extends Component {
     render() {
-        const { books } = this.props
+        const { books, onChangeShelf } = this.props
         books.sort(sortBy('title'))
 
         return (
             <ol className="books-grid">
                 {books.map(book =>
                     <li key={book.id}>
-                        <Book book={book} onChangeShelf={this.props.onChangeShelf} />
+                        <Book book={book} onChangeShelf={onChangeShelf} />
                     </li>
                 )}
             </ol>
