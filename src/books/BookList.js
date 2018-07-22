@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Book from './Book'
 import sortBy from 'sort-by'
+import PropTypes from 'prop-types'
 
 class BookList extends Component {
     render() {
@@ -17,6 +18,11 @@ class BookList extends Component {
             </ol>
         )
     }
+}
+
+BookList.propTypes = {
+    books: PropTypes.array.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
 }
 
 export default BookList

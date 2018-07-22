@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import TopBar from '../common/TopBar'
 import * as BooksAPI from '../BooksAPI'
@@ -40,7 +41,7 @@ class BookDetails extends Component {
 
                 <div className="search-books-results">
                     <div className='books-grid'>
-                        <Book book={this.state.book} showDetails={true}  onChangeShelf={this.changeShelf} />
+                        <Book book={this.state.book} showDetails={true} onChangeShelf={this.changeShelf} />
 
                         <div className='books-details'>
                             <strong>Description</strong>
@@ -52,6 +53,14 @@ class BookDetails extends Component {
             </div>
         )
     }
+}
+
+BookDetails.propTypes = {
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+            bookId: PropTypes.number.isRequired
+        })
+    })
 }
 
 export default withRouter(BookDetails)

@@ -5,7 +5,8 @@ import { MemoryRouter } from 'react-router'
 
 const props = {
     books: [{ id: 'book_id' }],
-    onChangeShelf: jest.fn()
+    onChangeShelf: jest.fn(),
+    title: 'Current Reading'
 }
 
 describe('Component <BookSection />', () => {

@@ -8,9 +8,7 @@ let props = {}
 
 beforeEach(() => {
     props = {
-        books: [{ id: 'book_id' }],
-        onChangeShelf: jest.fn(),
-        match: { params: [ {bookId: 100} ] }
+        match: { params: {bookId: 100} }
     }
 })
 

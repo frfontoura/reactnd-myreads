@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LinkButton from '../common/LinkButton'
 import If from '../common/If'
-
+import PropTypes from 'prop-types'
 
 class Book extends Component {
 
@@ -34,6 +34,11 @@ class Book extends Component {
             </div>
         )
     }
+}
+
+Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
 }
 
 export default Book
