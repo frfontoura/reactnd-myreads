@@ -6,14 +6,24 @@ Para instalar:
 
 Requisitos: NodeJs e Git
 
+Faça o clone do repositório:
 ```sh
 git clone https://github.com/frfontoura/reactnd-myreads.git
 ```
+
+Baixe as dependências:
 ```sh
 npm install
 ```
+
+Execute o servidor de desenvolvimento:
 ```sh
 npm start
+```
+
+Para executar os testes:
+```sh
+npm run test -- --coverage
 ```
 
 Os termos para busca podem ser encontrados em: [SEARCH_TERMS](https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md)
